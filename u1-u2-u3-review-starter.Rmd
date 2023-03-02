@@ -49,10 +49,22 @@ solubility_hardness has 3 rows and 3 variables, each row is a mineral.
 
 ### Exercise 3
 
-Remove this text, and add your answer for Exercise 3 here.
-Add code chunks as needed.
-Don't forget to label your code chunk.
-Do not use spaces in code chunk labels.
+The output has 23 rows, which is the same as the sand-minerals data set. 
+
+```{r join-mineral-properties}
+sand_mineral_density <- density %>%
+  left_join(sites)
+
+sand_mineral_density
+```
+
+```{r join-mineral-properties2}
+sand_mineral_properties <- solubility_hardness %>%
+  left_join(sand_mineral_density)
+
+sand_
+```
+
 
 ### Exercise 4
 
