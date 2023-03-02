@@ -99,17 +99,42 @@ sand_mineral_properties %>%
 
 ### Exercise 5
 
-Remove this text, and add your answer for Exercise 5 here.
-Add code chunks as needed.
-Don't forget to label your code chunk.
-Do not use spaces in code chunk labels.
+```{r distinct-values-density}
+sand_mineral_properties %>%
+  count(density)
+```
+
+```{r number-minerals}
+sand_mineral_properties %>%
+  count(minerals)
+```
+
+```{r density-1000}
+sand_mineral_properties %>%
+  mutate(density_1000 = density/1000)
+```
+
+```{r summary-mean-density}
+sand_mineral_properties %>%
+  summarize(mean(density))
+```
+
+```{r summary-mean-density-location}
+sand_mineral_properties %>%
+  group_by(location) %>%
+  summarize(mean_density = mean(density))
+  
+```
+
 
 ### Exercise 6
 
-Remove this text, and add your answer for Exercise 6 here.
-Add code chunks as needed.
-Don't forget to label your code chunk.
-Do not use spaces in code chunk labels.
+```{r}
+sites %>%
+  pivot_wider(names_from = minerals, values_from = locaiton) %>%
+  pivot_longer()
+```
+
 
 ## Part II - Data Visualization
 
