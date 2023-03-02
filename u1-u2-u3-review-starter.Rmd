@@ -31,10 +31,21 @@ There are 23 rows, and 2 variables. Each row is a location of the minerals.
 
 ### Exercise 2
 
-Remove this text, and add your answer for Exercise 2 here.
-Add code chunks as needed.
-Don't forget to label your code chunk.
-Do not use spaces in code chunk labels.
+```{r inspect-other-data-frames}
+glimpse(location_descriptions) %>% 
+  ls()
+
+glimpse(density) %>% 
+  ls()
+
+glimpse(solubility_hardness) %>% 
+  ls()
+```
+location_descriptions has 10 rows and 2 variables, each row is a location.
+
+Density has 3 rows and two variables, each row is a mineral.
+
+solubility_hardness has 3 rows and 3 variables, each row is a mineral.
 
 ### Exercise 3
 
