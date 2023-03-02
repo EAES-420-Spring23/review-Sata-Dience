@@ -62,16 +62,40 @@ sand_mineral_density
 sand_mineral_properties <- solubility_hardness %>%
   left_join(sand_mineral_density)
 
-sand_
+sand_mineral_properties
 ```
 
 
 ### Exercise 4
 
-Remove this text, and add your answer for Exercise 4 here.
-Add code chunks as needed.
-Don't forget to label your code chunk.
-Do not use spaces in code chunk labels.
+```{r number-of-sand-grains-observed}
+sand_mineral_properties %>%
+  count(location)
+```
+
+```{r bottom-slice}
+sand_mineral_properties %>%
+  slice(14:23)
+```
+
+```{r density}
+sand_mineral_properties %>%
+  arrange(desc(density)) %>%
+  slice(14:23)
+```
+
+```{r first-and-last}
+sand_mineral_properties %>%
+  select(c(1,5)) %>%
+  slice(19:23)
+```
+
+```{r no-more-hardness}
+sand_mineral_properties %>%
+  na.omit(hardness) %>%
+  arrange(desc(density)) %>%
+  slice(1:5)
+```
 
 ### Exercise 5
 
